@@ -14,7 +14,7 @@ print(access_token_response.text)
 tokens = json.loads(access_token_response.text)
 print("access token: " + tokens['access_token'])
 
-# step B - with the returned access_token we can make as many calls as we want
+# Step B - with the returned access_token we can make as many calls as we want.
 api_call_headers = {
     'Authorization': 'Bearer ' + tokens['access_token'],
     'Accept': 'application/json'

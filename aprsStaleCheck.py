@@ -12,6 +12,13 @@ def send_email(alert_message, is_alert, timestamp_str, smtp_password, from_addre
     msg['Subject'] = f"{alert_subject} {station} checked: {alert_message}"
     msg['From'] = from_address
     msg['To'] = to_address
+
+    # Set email importance based on is_alert value
+    if is_alert:
+        msg['Importance'] = 'High'
+    else:
+        msg['Importance'] = 'Low'
+
     body = f"{alert_message}\nTimestamp: {timestamp_str}"
     msg.attach(MIMEText(body, 'plain'))
 

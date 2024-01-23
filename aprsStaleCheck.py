@@ -20,6 +20,7 @@ def send_email(alert_message, is_alert, timestamp_str, smtp_password, from_addre
             msg['Importance'] = 'Low'
 
         body = f"{alert_message}\nTimestamp: {timestamp_str}"
+        body += "\nData from https://aprs.fi"
         msg.attach(MIMEText(body, 'plain'))
 
         print("Sending email.")
@@ -43,6 +44,8 @@ if __name__ == "__main__":
     alert_mode = sys.argv[6]
 
     url = f"https://api.aprs.fi/api/get"
+    # This client app must identify its unique name: aprsStaleCheck.py/0.0.1 (+https://github.com/kelvin0mql/misc_python/)
+    headers = {'User-Agent': 'aprsStaleCheck.py/0.0.1 (+https://github.com/kelvin0mql/misc_python/)'}
 
     params = {
         'name': station,

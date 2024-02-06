@@ -57,6 +57,10 @@ if __name__ == "__main__":
     print(f"Fetching data for station {station}")
     response = requests.get(url, params=params)
 
+    # If alert_mode is DEBUG, print the entire response
+    if alert_mode == 'DEBUG':
+        print("Response: ", response.json())
+
     if response.status_code != 200:
         print(f"Failed to get data, received status code {response.status_code}")
         exit(1)

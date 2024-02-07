@@ -1,4 +1,5 @@
-## aprsStaleChecker.py
+# aprsStaleChecke.py
+## Old "misc_python" project moved to "APRS_Stale_Check" on Feb 7, 2024
 The short story: my APRS 2-way Gateway has sometimes gone offline for several days without my noticing. This checks it
 and sends email to alert me of a problem.
 

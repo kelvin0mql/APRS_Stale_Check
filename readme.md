@@ -38,6 +38,6 @@ Please see line 35 of the script for its usage.
 It will send an email with Importance=High if the monitored station hasn't been heard by aprs.fi in an hour. But if it
 has been heard within the hour, the email Importance=Low.
 
-The 6th command line argument is either INFO or ALERT. If you choose ALERT, then it will not email you if the station 
-has been heard within the hour. But choose INFO and it will email you either way. So use INFO to make sure you've got
-all your stuff set up right, then change your crontab entry to use ALERT instead.
+The 6th command line argument is DEBUG, INFO or WARN. If you choose WARN, then it will not email you if the station 
+has been heard within the hour. But choose (DEBUG or) INFO and it will email you either way. So use INFO to make sure
+you've got all your stuff set up right, then change your crontab entry to use WARN instead.

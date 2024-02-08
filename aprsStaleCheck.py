@@ -80,5 +80,6 @@ if __name__ == "__main__":
         send_email(message, alert, formatted_lasttime, smtp_password, from_address, to_address, station, verbosity, json_data=data if verbosity == 'DEBUG' else None)
     else:
         print(f"No data returned for station {station}.") if verbosity not in ['WARN'] else None
-        message = f"No data returned for station {station}. Please verify the station id."
-        send_email(message, True, '', smtp_password, from_address, to_address, station, verbosity, json_data=data if verbosity == 'DEBUG' else None)
+        if verbosity == 'DEBUG':
+            message = f"No data returned for station {station}. Please verify the station id."
+            send_email(message, True, '', smtp_password, from_address, to_address, station, verbosity, json_data=data if verbosity == 'DEBUG' else None)
